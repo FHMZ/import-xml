@@ -12,10 +12,10 @@ export class FileService {
   constructor(private http: HttpClient) {}
 
   createFile(file: File): Observable<string> {
-    return this.http.post<string>(`${this.url}/imports-xml`, file);
+    return this.http.post<string>(`${this.url}/imports`, file);
   }
 
   getAllFiles(): Observable<FileResponse[]> {
-    return this.http.get<FileResponse[]>(`${this.url}/imports-xml`);
+    return this.http.get<FileResponse[]>(`${this.url}/imports/regions`);
   }
 }

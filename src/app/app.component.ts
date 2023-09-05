@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getAllFiles();
+    this.getAllFiles();
   }
 
   openUploadModal(): void {
