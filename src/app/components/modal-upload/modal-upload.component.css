@@ -1,0 +1,52 @@
+.container-upload {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 16px;
+}
+
+mat-form-field {
+  flex-direction: row;
+  width: 100%;
+}
+
+.browser-button {
+  height: 40px;
+}
+
+mat-form-field, input {
+  cursor: pointer;
+}
+
+.list-container {
+  padding: 8px;
+  background-color: ghostwhite;
+  border-radius: 8px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.list-item-text {
+  width: 100%;
+}
+
+[mat-dialog-actions] {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}

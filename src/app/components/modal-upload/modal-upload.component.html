@@ -1,0 +1,55 @@
+<div class="container-upload">
+  <h1 mat-dialog-title>Upload de Arquivos</h1>
+
+  <div mat-dialog-content>
+    <div class="field-container">
+      <input hidden (change)="browseFile($event)" #fileInput type="file" />
+
+      <mat-form-field>
+        <mat-label>Nome do Arquivo</mat-label>
+        <input
+          matInput
+          readonly
+          [value]="fileName"
+          (click)="fileInput.click()"
+        />
+        <button matSuffix mat-icon-button (click)="onResetInputLabel()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="list-container">
+      <mat-list>
+        <mat-list-item>
+          <span matListItemTitle
+            ><b>{{
+              files.length !== 0
+                ? "Lista de Arquivos Selecionados"
+                : "Lista está vazia"
+            }}</b></span
+          >
+        </mat-list-item>
+
+        <mat-list-item class="list-item" *ngFor="let file of files">
+          <div class="list-item-text">{{ file.name }}</div>
+          <button mat-icon-button (click)="deleteSelectedFile(file)">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onClose()">Cancelar</button>
+    <button
+      mat-button
+      color="primary"
+      disabled="{{ files.length === 0 }}"
+      (click)="onUploadFiles()"
+    >
+      Upload
+    </button>
+  </div>
+</div>
